@@ -3,6 +3,7 @@ config/mail.yml
 *~
 db/*.sqlite*
 db/schema.rb
+db/db_*
 .*.swp
 .*.swo
 .DS_Store
@@ -18,6 +19,7 @@ installer/rails_installer.yml
 /public/stylesheets/all.css
 tmp/*
 /coverage/
+/spec/coverage/
 nbproject
 public/cache/*
 .rbenv-version
