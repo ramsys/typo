@@ -34,16 +34,6 @@ describe Admin::CategoriesController do
     end
   end
 
-  it "test_create" do
-    pt = Factory(:category)
-    Category.should_receive(:find).with(:all).and_return([])
-    Category.should_receive(:new).and_return(pt)
-    pt.should_receive(:save!).and_return(true)
-    post :edit, 'category' => { :name => "new category" }
-    assert_response :redirect
-    assert_redirected_to :action => 'index'
-  end
-
   it "test_update" do
     post :edit, :id => Factory(:category).id
     assert_response :redirect, :action => 'index'
