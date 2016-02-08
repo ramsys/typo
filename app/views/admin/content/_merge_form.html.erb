@@ -1,0 +1,12 @@
+<div class=''>
+  <h3><%= _("Merge Articles") %></h3>
+
+  <%= form_tag :action=>"merge", :id => @article.id do %>
+  <%= error_messages_for 'article' %>
+  <div class='clearfix'>
+    <%= _("Article ID")%>
+    <%= text_field_tag :merge_with %>
+  </div>
+  <%= submit_tag "Merge", class: "btn" %>
+  <% end %>
+</div>
