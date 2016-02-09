@@ -418,9 +418,16 @@ class Article < Content
 
   # Merge two article
   def merge_with(other_article_id)
-    @other_article = Article.find(other_article_id)
-    @other_article.body += body
-    return @other_article
+    other_article = Article.find(other_article_id)
+    self.body += other_article.body
+    
+    other_article.comments.each do |comment|
+      comments << comment.clone
+    end
+    
+    other_article.destroy
+    self.save
+    return self
   end
 
   protected

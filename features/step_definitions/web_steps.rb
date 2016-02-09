@@ -44,7 +44,7 @@ Given /^the blog is set up$/ do
 
   User.create!({:login => 'publisher',
                 :password => 'aaaaaaaa',
-                :email => 'joe@snow.com',
+                :email => 'joe2@snow.com',
                 :profile_id => 2,
                 :name => 'publisher',
                 :state => 'active'})

@@ -24,17 +24,18 @@ describe Admin::ContentController do
       it 'should call the model method that performs merge' do
         art_id = "1"
         art2_id = "2"
-        @article.should_receive(:merge_with)
         post :merge, {'id' => art_id, 'merge_with' => art2_id}
+        Article.should_receive(:merge_with)
       end
 
+=begin
       it 'should shows new article' do
 
         @article.stub(:merge_with => "2")
         post :merge, {'id' => 1, 'merge_with' => 2}
 
       end
-
+=end
 =begin
       it 'should merge two articles' do
         art_id = @article.id
